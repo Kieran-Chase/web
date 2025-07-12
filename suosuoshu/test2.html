@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>机器人控制页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0e7ff, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+        .header {
+            width: 100%;
+            background: #ff4444;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid #cc0000;
+        }
+        .header h1 {
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        .header p {
+            font-size: 0.8em;
+            opacity: 0.9;
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            width: 95%;
+            max-width: 1200px;
+            margin: 10px 0;
+            gap: 10px;
+        }
+        .robot-image {
+            flex: 1;
+            text-align: center;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .robot-image:hover {
+            transform: scale(1.02);
+        }
+        .robot-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+        }
+        .robot-image p {
+            margin: 6px 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .robot-image button {
+            padding: 5px 10px;
+            margin: 0 3px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .robot-image button:hover {
+            background-color: #45a049;
+        }
+        .controls-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .camera-feed {
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            height: 300px; /* Increased height for camera feed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+        }
+        .camera-feed img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            object-fit: contain;
+        }
+        .controls {
+            flex: 1;
+            text-align: center;
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .controls:hover {
+            transform: scale(1.02);
+        }
+        .controls h2 {
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            color: #ff4444;
+        }
+        .controls .manual-status-group div {
+            margin: 4px 0; /* Reduced vertical spacing for these elements */
+            font-size: 0.95em;
+            color: #444;
+        }
+        .status {
+            text-align: center;
+            margin: 10px 0;
+            padding: 8px 15px;
+            background: #ffd700;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            font-size: 1em;
+            color: #333;
+        }
+        .extra-controls {
+            margin-top: 8px;
+            text-align: center;
+        }
+        .extra-controls button {
+            padding: 6px 12px;
+            margin: 0 6px;
+            background-color: #2196F3;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .extra-controls button:hover {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>智能种植设备远程操作平台</h1>
+        <p>最近 6月24 11:39:05 2025</p>
+    </div>
+    <div class="content">
+        <div class="robot-image">
+            <img src="82704f08d8f778ca190df811931fe0ef_720.png" alt="机器人图片">
+            <p>机器人高度：30 cm <button>+</button> <button>-</button></p>
+            <p>机器人宽度：30 cm <button>+</button> <button>-</button></p>
+            <p>送货状态：0 棵 <button>送货</button></p>
+            <p>温度：29.0°C</p>
+        </div>
+        <div class="controls-container">
+            <div class="camera-feed">
+                <img src="897c10e201762993c4148eb6cda32be7.png" alt="摄像头画面">
+            </div>
+            <div class="controls">
+                <div class="manual-status-group">
+                    <h2>手动操作</h2>
+                    <div>前进</div>
+                    <div>后退</div>
+                    <div>左转</div>
+                    <div>右转</div>
+                    <div>机器人作业状态：正常</div>
+                </div>
+                <div class="extra-controls">
+                    <button>自动巡航</button>
+                    <button>紧急停止</button>
+                    <button>返回基地</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="status">
+        <p>机器人作业状态：正常</p>
+    </div>
+</body>
+</html>
