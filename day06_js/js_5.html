@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        //取数字
+        console.log(Number(null));//0
+        console.log(Number(undefined));//NaN 非数字
+        console.log(Number(true));//1
+        console.log(Number(false));//0
+        console.log(Number(''));//0
+        console.log(Number('123'));//123
+        console.log(Number('123.45'));//123.45
+        console.log(Number('123.45.56'));//NaN
+        console.log(Number('123abc'));//NaN
+        console.log(Number('01234'));//1234 */
+
+        /* //取整数
+        console.log(parseInt('123'));//123
+        console.log(parseInt('123.96'));//123 不四舍五入
+        console.log(parseInt('123.96.45'));//123
+        console.log(parseInt('aaa'));//NaN
+        console.log(parseInt('123aaa'));//123 取第一个不为数字的值截断  返回数字 */
+        
+        /* //取浮点数
+        console.log(parseFloat('123'));//123
+        console.log(parseFloat('123.456'));//123.456
+        console.log(parseFloat('123.45.67'));//123.45
+        console.log(parseFloat('aaa'));//NaN
+        console.log(parseFloat('123.45aaa'));//123.45
+        console.log(parseFloat('a123.45aaa'));//NaN */
+        
+        //isNaN()函数检测是否是 非数字
+        //isNaN(要检测的值)
+        //结果为true:表示是 非数字
+        //结果是false:表示是数字
+        console.log(isNaN('123'));//false
+        console.log(isNaN(123));//false
+        console.log(isNaN("123abc"));//true
+        console.log(isNaN(true));//false
+
+    </script>
+</body>
+</html>
