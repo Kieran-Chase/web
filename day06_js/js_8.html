@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function test(){
+            try{
+                let x;
+                x.toString();
+            }catch(err){//err自定义名
+                console.log(e);
+            }finally{
+                console.log("finally");
+            }
+        }
+        //test();
+        function test1(){
+            try{
+                let age=20;
+                if(age>12){
+                    throw "年龄过大";
+                }else if(age<6){
+                    throw "年龄过小"
+                }else{
+                    console.log("年龄是"+age);
+                }
+            }catch(e){
+                alert(e);
+            }
+        }
+        test1();
+    </script>
+    
+</body>
+</html>
