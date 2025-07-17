@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>聊天室</div>
+    <div><textarea id="c"></textarea></div>
+    <div>
+        <input type="checkbox" onclick="autoClear(this)">自动清除
+    </div>
+    <div><input type="text" id="a">
+    <button type="button" onclick="doSend()">发送</button>
+    </div>
+    <script>
+        function doSend(){
+            let v1=document.getElementById("a").value;
+            document.getElementById("c").value+=v1+"\n";
+            document.getElementById("a").value="";
+        }
+        function autoClear(obj){
+            let b=obj.checked;
+            if(b){
+                e=setInterval()
+            }
+
+        }
+    </script>
+</body>
+</html>

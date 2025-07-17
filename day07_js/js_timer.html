@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* function timers(){
+            //延迟指定毫秒数后，去执行第一个参数给定的事件
+            setTimeout("test()",2000);
+        }
+        function test(){
+            alert('hello');
+        } */
+
+        let e;
+        function timers(){
+            //间隔指定毫秒数后，去执行第一个参数给定的事件
+            e=setInterval("test()",2000);
+        }
+        function test(){
+            alert('hello');
+        }
+        function doCancle(){
+            clearInterval(e);
+        }
+    </script>
+    <button type="button" onclick="timers()">按钮1</button>
+    <button type="button" onclick="doCancle()">取消</button>
+</body>
+</html>

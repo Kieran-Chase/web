@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border: 1px solid red;
+        }
+    </style> 
+</head>
+<body>
+    <div id="x">你好</div>
+    <button type="button" onclick="changeVal()">改变值</button>
+    <script>
+        function changeVal(){
+            //获取html标签开始与结束中间夹的东西 用 innerHTML
+            let v=document.getElementById("x").innerHTML;
+            console.log(v);
+            //改变html中的值
+            if(v=="你好"){
+                document.getElementById("x").innerHTML="再见";
+            }else{
+                document.getElementById("x").innerHTML="你好";
+            }
+            
+        }
+    </script>
+</body>
+</html>
