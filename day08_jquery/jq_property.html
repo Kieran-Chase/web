@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #x{
+            width: 200px;
+            height: 30px;
+            position: relative;
+        }
+        #p{
+            width: 200px;
+            height: 30px;
+        }
+        #im{
+            position: absolute;
+            right: 3px;
+            bottom: 2px;
+        }
+        #im:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="x">
+        <input type="password" id="p">
+        <img src="眼睛_隐藏.png" id="im" 
+    </div>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+        $(function(){
+            $("#im").mousedown(function(){
+                $("#p").prop("type","text");
+                $("#im").prop("src","眼睛_显示.png");
+            })
+            $("#im").mouseup(function(){
+                $("#p").prop("type","password");
+                $("#im").prop("src","眼睛_隐藏.png");
+            })
+        })
+    </script>
+</body>
+</html>

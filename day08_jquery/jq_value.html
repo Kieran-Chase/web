@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="v" placeholder="请输入姓名">
+    <input type="text" id="idnum" placeholder="请输入身份证">
+    <input type="text" id="age" placeholder="请输入年龄">
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nameInput = document.getElementById('v');
+            const idInput = document.getElementById('idnum');
+            const ageInput = document.getElementById('age');
+
+            nameInput.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    alert('姓名不能为空');
+                }
+            });
+
+            idInput.addEventListener('blur', function() {
+                const idValue = this.value;
+                if (idValue.length >= 14) {
+                    const birthYear = parseInt(idValue.substring(6, 10));
+                    const currentYear = new Date().getFullYear();
+                    ageInput.value = currentYear - birthYear;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
